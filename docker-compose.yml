@@ -1,0 +1,22 @@
+#version: "3"
+services:
+  gestionapp:
+    build: .
+    container_name: gestion_container
+    ports:
+      - 8000:8080
+      
+  mysql:
+    image: mysql:8
+    container_name: mysqlContainer
+    restart: always
+    environment: 
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: gestion
+    ports:
+      - 3309:3306
+    
+  
+
+
+  
